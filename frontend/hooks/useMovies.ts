@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react"
 import api from "@/service/api-client"
-
 import { Movie } from "@/types/movie"
 
 const useMovies = (genre?: number, searchValue?: string, page: number = 1) => {
@@ -29,10 +28,10 @@ const useMovies = (genre?: number, searchValue?: string, page: number = 1) => {
         })
 
         setMovieList(res.data.results || [])
-      } catch (err: any) {
-        if (err.name !== "CanceledError") {
-          setError(err.message || "Something went wrong")
-        }
+      } catch (err: unknown) {
+  if (err instanceof Error && err.name !== "CanceledError") {
+    setError(err.message || "Something went wrong")
+  }
       } finally {
         setLoading(false)
       }

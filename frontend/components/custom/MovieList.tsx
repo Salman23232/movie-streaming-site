@@ -11,7 +11,7 @@ const MovieList = () => {
 
   const [page, setPage] = useState(1)
 
-  const { movieList, loading, error } = useMovies(genre, searchValue, page)
+  const { movieList, loading, error } = useMovies(genre ?? undefined, searchValue, page)
 
   const handlePrev = () => {
     if (page > 1) setPage((prev) => prev - 1)
