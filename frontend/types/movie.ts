@@ -7,5 +7,5 @@ export interface Movie {
     backdrop_path:string;
     poster_path:string;
     overview:string;
-    name?:string;
+    name:string;
 }

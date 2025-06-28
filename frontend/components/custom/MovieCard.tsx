@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation"
 const MovieCard = ({movie}:{movie:Movie}) => {
     const router = useRouter()
   return (
-    <Card className="m-2" onClick={()=> router.push(`/movie/${movie.id}`)}>
+    <Card className="m-2 cursor-pointer" onClick={()=> router.push(`/movie/${movie.id}`)}>
       <CardContent>
         <div><Image src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} width={1200} height={1200} alt={movie.title}/></div>
         <div className="flex flex-col">
