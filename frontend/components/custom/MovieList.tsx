@@ -4,6 +4,7 @@ import useMovies from "@/hooks/useMovies"
 import MovieCard from "./MovieCard"
 import { useGenreStore, useMovieStore } from "@/store/movieStore"
 import { useState } from "react"
+import Loading from "./Loading"
 
 const MovieList = () => {
   const { genre } = useGenreStore()
@@ -20,14 +21,13 @@ const MovieList = () => {
   const handleNext = () => {
     setPage((prev) => prev + 1)
   }
+  if (loading) <Loading/>
 
   return (
     <div className="flex flex-col gap-4">
       {/* Movie Grid */}
-      <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 p-2 gap-4">
-        {loading ? (
-          <p>Loading...</p>
-        ) : error ? (
+      <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 p-2 gap-4"> 
+        {error ? (
           <p className="text-red-500">Error: {error}</p>
         ) : (
           movieList?.map((movie, i) => (
