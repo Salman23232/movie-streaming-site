@@ -1,9 +1,8 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import { UserButton } from '@clerk/nextjs'
 import Link from 'next/link'
-import Loading from './Loading'
 import { Input } from '../ui/input'
 import Genre from './Genre'
 import { useMovieStore } from '@/store/movieStore'

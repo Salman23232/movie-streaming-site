@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import api from "@/service/api-client"
-import { useMovieStore } from "@/store/movieStore"
+
 import { Movie } from "@/types/movie"
 
 const useMovies = (genre?: number, searchValue?: string, page: number = 1) => {
